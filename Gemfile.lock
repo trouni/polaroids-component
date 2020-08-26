@@ -95,7 +95,6 @@ GEM
       tilt (~> 2.0)
     sinatra-static-assets (1.0.4)
       sinatra (>= 1.1.0)
-    sqlite3 (1.4.2)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tzinfo (1.2.7)
@@ -121,7 +120,6 @@ DEPENDENCIES
   sinatra-activerecord
   sinatra-contrib
   sinatra-static-assets
-  sqlite3
 
 BUNDLED WITH
    2.1.4
