@@ -1,0 +1,17 @@
+<% max_font_size = 18; min_font_size = 8 %>
+<div class="card" style="font-size: <%= [max_font_size - @polaroids.count / 6, min_font_size].max %>px;">
+  <div class="polaroids">
+    <% @polaroids.in_groups(4, false).each do |group| %>
+      <div class="grid-area">
+        <% group.each do |polaroid| %>
+          <div class="polaroid-wrapper" style="transform: rotate(<%= rand(-25..25) %>deg); z-index: <%= rand(1..5) %>;">
+            <div class="polaroid" style="transform: translate(-<%= rand(100) %>%, -<%= rand(20..80) %>%);">
+              <img src="https://source.unsplash.com/collection/1390381/200x200/?<%= rand(100000) %>">
+              <p class="author"><%= @names.sample %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
