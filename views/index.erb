@@ -2,12 +2,19 @@
 <div class="card" style="font-size: <%= [max_font_size - @polaroids.count / 6, min_font_size].max %>px;">
   <div class="polaroids">
     <% @polaroids.in_groups(4, false).each do |group| %>
-      <div class="grid-area">
+      <div class="polaroids-stack">
         <% group.each do |polaroid| %>
-          <div class="polaroid-wrapper" style="transform: rotate(<%= rand(-25..25) %>deg); z-index: <%= rand(1..5) %>;">
-            <div class="polaroid" style="transform: translate(-<%= rand(100) %>%, -<%= rand(20..80) %>%);">
-              <img src="https://source.unsplash.com/collection/1390381/200x200/?<%= rand(100000) %>">
-              <p class="author"><%= @names.sample %></p>
+          <div class="polaroid-wrapper" style="z-index: <%= rand(1..5) %>;">
+            <div class="polaroid-offset" style="transform: translate(-<%= rand(100) %>%, -<%= rand(100) %>%);">
+              <div class="polaroid-rotate" style="transform: rotate(<%= rand(-25..25) %>deg);">
+                <div class="polaroid">
+                  <div class="media square-img">
+                    <img src="https://source.unsplash.com/collection/1390381/1000x500/?<%= rand(100000) %>">
+                  </div>
+                  <p class="caption">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem harum voluptatibus quia, minima tempore consectetur architecto officia quod autem magni, ad at expedita maiores nihil asperiores illo, officiis ipsa! Dignissimos.</p>
+                  <p class="author"><%= @names.sample %></p>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
